@@ -1,2 +1,2 @@
-# Transistant
-[ABP16] Asistente de traducción y plataforma de gestión de traducciones.
+# Truequéalo
+[ABP16] Plataforma para realizar trueques.
