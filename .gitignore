@@ -1,0 +1,13 @@
+.DS_Store
+/**/node_modules
+.env
+.vscode
+*.log
+*.sublime-workspace
+*.sublime-project
+.gulp-cache
+dist/
+mysql-db/
+src/config/config.dev.js
+static/
+

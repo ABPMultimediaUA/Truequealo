@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title> Motor TAG </title>
+    <link rel="stylesheet" href="src/styles/style.css">
+
+    <script src="src/lib/gl-matrix.min.js"></script>
+    <script src="src/lib/utils.js"></script>
+    <script src="src/lib/loader.js"></script>
+
+    <script src="src/app.js"></script>
+
+    <!-- Fragment Shader //-->
+    <script id='shader-fs' type='x-shader/x-fragment'>
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+
+        uniform vec3 modelColor;
+
+        void main(void) {
+            gl_FragColor = vec4(modelColor, 1.0);
+        }
+    </script>
+
+    <!-- Vertex Shader //-->
+    <script id='shader-vs' type='x-shader/x-vertex'>
+        attribute vec3 aVertexPosition;
+
+        uniform mat4 uMVMatrix;
+        uniform mat4 uPMatrix;
+
+        void main(void) {
+            gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+            gl_PointSize = 3.0;
+        }
+    </script>
+</head>
+
+<body onLoad="bootstrapApp()">
+    <canvas id="canvas-element-id" width="1000" height="800"></canvas>
+</body>
+
+</html>
