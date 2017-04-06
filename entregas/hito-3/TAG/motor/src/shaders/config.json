@@ -1,0 +1,38 @@
+{
+  "phong": {
+    "id": 1,
+    "shaders": {
+      "vertex": "phong.vert",
+      "fragment": "phong.frag"
+    },
+    "light": {
+      "locations": {
+        "uLightAmbient": [0.5, 0.5, 0.5, 1.0],
+        "uLightDiffuse": [0.8, 0.8, 0.8, 1.0],
+        "uLightSpecular": [0.9, 0.9, 0.9, 1.0],
+        "uLightPosition": "positionVector"
+      }
+    },
+    "mesh": {
+      "texture": true,
+      "locations": ["uMaterialAmbient", "uMaterialDiffuse", "uMaterialSpecular", "uShininess"],
+      "modelMaterials": [{
+          "name": "ambient",
+          "type": "uniform4fv"
+        },
+        {
+          "name": "diffuse",
+          "type": "uniform4fv"
+        },
+        {
+          "name": "specular",
+          "type": "uniform4fv"
+        },
+        {
+          "name": "specularPower",
+          "type": "uniform1f"
+        }
+      ]
+    }
+  }
+}

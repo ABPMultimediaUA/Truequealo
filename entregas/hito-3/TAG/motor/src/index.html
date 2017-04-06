@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>TAG - Motor</title>
+
+  <script type="text/javascript" src="assets/js/dat.gui.min.js"></script>
+  <script type="text/javascript" src="assets/js/stats.min.js"></script>
+
+  <style media="screen">
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      color: white;
+      font-family: Verdana;
+    }
+
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+
+    .app-selector {
+      background: rgba(52, 152, 219, 0.5);
+      z-index: 10;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      overflow-y: scroll;
+      overflow: auto;
+    }
+
+    .controles {
+      background: rgba(142, 68, 173, 0.3);
+      z-index: 10;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    h3,
+    h4 {
+      margin: 0;
+    }
+
+    li {
+      list-style: square;
+    }
+
+    .enlace {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .enlace:hover {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="1000" height="700"></canvas>
+  <div class="controles">
+    <h4>Controles</h4>
+    <ul>
+      <li>Click Ratón: Movimiento cámara</li>
+      <li>WASD: Movimiento Malla</li>
+      <li>Q / E: Movimiento eje Z Maya</li>
+      <li>Z / X: Rotación malla</li>
+      <li>C / V: Rotación malla</li>
+    </ul>
+  </div>
+  <div class="app-selector" id="app-selector">
+    <h3>Entrega Hito 3</h3>
+    <p>Se ha optado por unir todas las tareas en un mismo entregable, en los siguientes enlaces se pueden probar las distintas funciones del motor:</p>
+    <span class="enlace" id="enlace-inicio">INICIO</span>
+    <span class="enlace" id="enlace-anim">ANIMACIÓN</span>
+    <span class="enlace" id="enlace-texturas">TEXTURAS</span>
+  </div>
+  <script src="/main.bundle.js"></script>
+</body>
+
+</html>
