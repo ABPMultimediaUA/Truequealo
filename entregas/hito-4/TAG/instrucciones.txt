@@ -1,0 +1,9 @@
+Para lanzar la aplicación en local se necesitará tener instalado NodeJS
+( https://nodejs.org/en/) con una versión superior a 6.
+
+Si se tiene instalado Node, el comando para lanzar la aplicación será:
+
+npm install  && npm run start
+
+Y a continuación navegar a  http://localhost:9090.
+Si no se dispone de Node, también se puede visualizar en:  http://tag.truequealo.es/.
