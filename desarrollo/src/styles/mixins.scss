@@ -1,0 +1,42 @@
+.m-progress {
+  position: relative;
+  opacity: 0.8;
+  color: transparent !important;
+  text-shadow: none !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    cursor: default;
+    color: transparent;
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background: transparent;
+    border: 1px solid #fff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    width: 24px;
+    height: 24px;
+    -webkit-animation: ld 1s ease-in-out infinite;
+    -moz-animation: ld 1s ease-in-out infinite;
+    -o-animation: ld 1s ease-in-out infinite;
+    animation: ld 1s ease-in-out infinite;
+  }
+}
+
+.btn-default.m-progress:before {
+  border-left-color: #333333;
+  border-right-color: #333333;
+}

@@ -1,0 +1,32 @@
+box: node
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    # A step that executes `npm install` command
+    - npm-install
+    - script:
+      name: Test build
+      code: npm run build
+    # Add lint
+
+# deploy step
+deploy:
+  steps:
+    - add-to-known_hosts:
+      hostname: $SERVER_HOSTNAME
+      ## Add ssh key to wercker to access the ovh server.
+    - add-ssh-key:
+      keyname: ovh_docker
+    - script:
+      name: Checkout the branch
+      code: ssh $SERVER_USER@$SERVER_HOSTNAME "cd $APP_NAME/ && git checkout $WERCKER_GIT_BRANCH"
+    - script:
+      name: Pull from bitbucket
+      code: ssh $SERVER_USER@$SERVER_HOSTNAME "cd $APP_NAME/ && git pull"
+    - script:
+      name: Install node modules
+      code: ssh $SERVER_USER@$SERVER_HOSTNAME "cd $APP_NAME/ && npm install"
+    - script:
+      name: Build prod app
+      code: ssh $SERVER_USER@$SERVER_HOSTNAME "cd $APP_NAME/ && npm run build"
